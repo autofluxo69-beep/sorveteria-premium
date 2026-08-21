@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-primary-dark text-white font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    @apply bg-accent-orange/30 text-white;
+  }
+
+  :focus-visible {
+    outline: 2px solid #FB923C;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .section-eyebrow {
+    @apply text-accent-orange tracking-[0.25em] text-xs font-semibold uppercase;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-white/70 text-white px-7 py-3 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 hover:bg-white hover:text-primary-dark;
+  }
+
+  .btn-solid {
+    @apply inline-flex items-center justify-center gap-2 bg-accent-orange text-primary-dark px-7 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-300 hover:shadow-glow hover:-translate-y-0.5;
+  }
+
+  .container-app {
+    @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-10;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
